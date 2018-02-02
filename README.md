@@ -1,12 +1,14 @@
-#Server code
-/* Java project done by Susmitha Mohan, Priyanka Jagadesh Kumar, Vaishali Pachisiya
- * This is Java Project that allows Multiple Clients to access a single Server
- * This Server Class allows Multiple clients to request for Mathematical operations
+# Server code
+
+/* Java project done by Susmitha Mohan, Priyanka Jagadesh Kumar, Vaishali Pachisiya /*
+* This is Java Project that allows Multiple Clients to access a single Server /*
+* This Server Class allows Multiple clients to request for Mathematical operations
  * And returns the result to the respective clients
  * It also returns the number of clients using the server if requested
  */
 
 import java.io.IOException;
+
 import java.net.Socket;
 import java.net.ServerSocket;
 import java.util.concurrent.ExecutorService;
@@ -19,15 +21,15 @@ import java.util.concurrent.Executors;
  */
 public class Server {
 
-    public static int a = 0;//Creating Static variable
+public static int a = 0;//Creating Static variable
 
 	/**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
     	
-        int portNumber = Integer.parseInt("8080"); //creating port number
-        ExecutorService executor = null; //Initializing ExecutiveService variable
+    int portNumber = Integer.parseInt("8080"); //creating port number
+    ExecutorService executor = null; //Initializing ExecutiveService variable
         try (ServerSocket serverSocket = new ServerSocket(portNumber);){
             executor = Executors.newFixedThreadPool(5); //creating a limit of clients up to 5 threads
             System.out.println("Waiting for client");
@@ -49,7 +51,7 @@ public class Server {
     
 }
 
-#Request Handling:
+# Request Handling:
 
 /* Java project done by Susmitha Mohan, Priyanka Jagadesh Kumar, Vaishali Pachisiya
  * This is Java Project that allows Multiple Clients to access a single Server
@@ -151,7 +153,7 @@ public class RequestHandler implements Runnable {
     
 }
 
-#Client Code:
+# Client Code:
 
 /* Java project done by Susmitha Mohan, Priyanka Jagadesh Kumar, Vaishali Pachisiya
  * This is Java Project that allows Multiple Clients to access a single Server
